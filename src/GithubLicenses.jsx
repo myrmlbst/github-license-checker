@@ -12,7 +12,7 @@ const GithubLicenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSearchedUsername(username);
-    setSelectedLanguage('all'); // Reset filters on new search
+    setSelectedLanguage('all'); // reset filters on new search
     setSortByRecent(false);
   };
 
@@ -44,12 +44,12 @@ const GithubLicenses = () => {
     }
   }, [searchedUsername]);
 
-  // Get unique languages from repositories
+  // get unique languages from repos
   const languages = repositories.length > 0
     ? ['all', ...new Set(repositories.map(repo => repo.language).filter(Boolean))]
     : ['all'];
 
-  // Filter and sort repositories
+  // filter and sort repos
   const filteredRepositories = repositories
     .filter(repo => selectedLanguage === 'all' || repo.language === selectedLanguage)
     .sort((a, b) => {
@@ -59,7 +59,7 @@ const GithubLicenses = () => {
       return 0;
     });
 
-  // Function to get license statistics
+  // get license stats
   const getLicenseStats = (repos) => {
     const stats = repos.reduce((acc, repo) => {
       const licenseName = repo.license ? repo.license.name : 'No License';
@@ -74,74 +74,94 @@ const GithubLicenses = () => {
   };
 
   return (
-    <div className="github-licenses">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter GitHub username"
-          required
-        />
-        <button type="submit">Search Repositories</button>
-      </form>
+    <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
+      <div className="font-bold text-5xl mb-4 text-center">
+        GitHub License Checker
+        <p className="text-accent text-center font-medium text-xl">Avoid legal complications in the open-source world; check which of your GitHub repositories are missing licenses</p>
+      </div>
 
-      {loading && <div>Loading repositories...</div>}
-      {error && <div>Error: {error}</div>}
+      <div className="github-licenses">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={username}
+            className="border-1 border-solid px-4 py-2 rounded-md m-2"
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter GitHub username"
+            required
+          />
+          <button
+            type="submit"
+             className="bg-accent text-background px-4 py-2 rounded-md text-primary border-1 border-solid"          >
+            Search Repositories
+          </button>
+        </form>
 
-      {searchedUsername && !loading && !error && (
-        <>
-          <h2>Repositories for {searchedUsername}</h2>
+        {loading && <div>Loading repositories...</div>}
+        {error && <div>Error: {error}</div>}
 
-          {/* Add License Statistics */}
-          <div className="license-stats">
-            <h3>Repository Statistics</h3>
-            <p>Total Repositories: {filteredRepositories.length}</p>
-            <div className="license-breakdown">
-              <h4>License Breakdown:</h4>
+        {searchedUsername && !loading && !error && (
+          <>
+            <h2 className="font-bold text-center">
+              Repositories for {''}
+              <span className="text-accent">
+                {searchedUsername}
+              </span>
+            </h2>
+
+            {/* terminal displaying license stats */}
+            <div className="license-stats border-2 border-solid border-accent p-4 my-8 bg-foreground rounded-xl">
+              <h3 className="font-bold">Repository Statistics</h3>
+              <p>Total Repositories: {filteredRepositories.length}</p>
+              <div className="license-breakdown">
+                <h4>License Breakdown:</h4>
+                <ul>
+                  {Object.entries(getLicenseStats(repositories).licenseBreakdown).map(([license, count]) => (
+                    <li key={license} className="">
+                      {license}: {count} repositories
+                      ({((count / repositories.length) * 100).toFixed(1)}%)
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="filters">
+              <select
+                value={selectedLanguage}
+                onChange={(e) => setSelectedLanguage(e.target.value)}
+              >
+                {languages.map(lang => (
+                  <option key={lang}
+                          value={lang}
+                          className=""
+                  >
+                    {lang === 'all' ? 'All Languages' : lang || 'No Language'}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {filteredRepositories.length > 0 ? (
               <ul>
-                {Object.entries(getLicenseStats(repositories).licenseBreakdown).map(([license, count]) => (
-                  <li key={license}>
-                    {license}: {count} repositories
-                    ({((count / repositories.length) * 100).toFixed(1)}%)
+                {filteredRepositories.map((repo) => (
+                  <li key={repo.id} className="p-2 bg-foreground border-2 border-solid border-accent rounded-xl my-2">
+                    <strong>{repo.name}</strong>: {' '}
+                    {repo.license ? repo.license.name : <span className="text-accent">No license specified</span>}
+                    <div className="repo-details text-sm">
+                      <small>
+                        Language: {repo.language || 'Not specified'}
+                      </small>
+                    </div>
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-
-          <div className="filters">
-            <select
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-            >
-              {languages.map(lang => (
-                <option key={lang} value={lang}>
-                  {lang === 'all' ? 'All Languages' : lang || 'No Language'}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {filteredRepositories.length > 0 ? (
-            <ul>
-              {filteredRepositories.map((repo) => (
-                <li key={repo.id}>
-                  <strong>{repo.name}</strong>: {' '}
-                  {repo.license ? repo.license.name : 'No license specified'}
-                  <div className="repo-details">
-                    <small>
-                      Language: {repo.language || 'Not specified'}
-                    </small>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No repositories found matching the selected filters.</p>
-          )}
-        </>
-      )}
+            ) : (
+              <p>No repositories found matching the selected filters.</p>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
