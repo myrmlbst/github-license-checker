@@ -111,7 +111,7 @@ const GithubLicenses = () => {
             </h2>
 
             {/* terminal displaying license stats */}
-            <div className="license-stats border-1 border-solid p-4 my-8 bg-foreground rounded-xl">
+            <div className="license-stats border-1 border-solid p-4 my-8 bg-foreground rounded-md">
               <h3 className="font-bold text-highlighted">Repository Statistics</h3>
               <p>Total Repositories: {filteredRepositories.length}</p>
 
@@ -149,7 +149,7 @@ const GithubLicenses = () => {
             {filteredRepositories.length > 0 ? (
               <ul>
                 {filteredRepositories.map((repo) => (
-                  <li key={repo.id} className="p-2 mb-2 border-1 border-solid rounded-xl my-2">
+                  <li key={repo.id} className="p-2 mb-2 border-1 border-solid border-foreground rounded-md my-2">
                     <strong className="text-highlighted">{repo.name}</strong>: {' '}
                     {repo.license ? repo.license.name : <span className="text-warning font-bold">No license specified</span>}
                     <div className="repo-details text-sm">
