@@ -97,7 +97,8 @@ const GithubLicenses = () => {
           </button>
         </form>
 
-        {loading && <div>Loading repositories...</div>}
+        {loading && <div>Crunching the latest data, just for you. Hang on tight...</div>}
+        {/* this exact phrase is actually used by GitHub, i did add "on" in the last phrase tho */}
         {error && <div>Error: {error}</div>}
 
         {searchedUsername && !loading && !error && (
