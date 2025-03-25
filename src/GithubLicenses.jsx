@@ -111,14 +111,14 @@ const GithubLicenses = () => {
             </h2>
 
             {/* terminal displaying license stats */}
-            <div className="license-stats border-1 border-solid border-accent p-4 my-8 bg-foreground rounded-xl">
-              <h3 className="font-bold">Repository Statistics</h3>
+            <div className="license-stats border-1 border-solid p-4 my-8 bg-foreground rounded-xl">
+              <h3 className="font-bold text-highlighted">Repository Statistics</h3>
               <p>Total Repositories: {filteredRepositories.length}</p>
 
-              <div className="border-1 border-accent border-solid m-2"></div>
+              <div className="border-1 border-solid m-2"></div>
 
               <div className="license-breakdown">
-                <h4 className="font-bold">License Breakdown:</h4>
+                <h4 className="font-bold text-highlighted">License Breakdown:</h4>
                 <ul>
                   {Object.entries(getLicenseStats(repositories).licenseBreakdown).map(([license, count]) => (
                     <li key={license} className="">
@@ -149,9 +149,9 @@ const GithubLicenses = () => {
             {filteredRepositories.length > 0 ? (
               <ul>
                 {filteredRepositories.map((repo) => (
-                  <li key={repo.id} className="p-2 mb-2 bg-foreground border-1 border-solid border-accent rounded-xl my-2">
-                    <strong>{repo.name}</strong>: {' '}
-                    {repo.license ? repo.license.name : <span className="text-accent">No license specified</span>}
+                  <li key={repo.id} className="p-2 mb-2 border-1 border-solid rounded-xl my-2">
+                    <strong className="text-highlighted">{repo.name}</strong>: {' '}
+                    {repo.license ? repo.license.name : <span className="text-warning font-bold">No license specified</span>}
                     <div className="repo-details text-sm">
                       <small>
                         Language: {repo.language || 'Not specified'}
