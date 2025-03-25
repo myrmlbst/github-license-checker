@@ -92,7 +92,7 @@ const GithubLicenses = () => {
           />
           <button
             type="submit"
-             className="bg-accent text-background px-4 py-2 rounded-md text-primary border-1 border-solid"          >
+             className="bg-accent text-background px-4 py-2 rounded-md text-primary border-1 border-solid border-accent">
             Search Repositories
           </button>
         </form>
@@ -111,7 +111,7 @@ const GithubLicenses = () => {
             </h2>
 
             {/* terminal displaying license stats */}
-            <div className="license-stats border-2 border-solid border-accent p-4 my-8 bg-foreground rounded-xl">
+            <div className="license-stats border-1 border-solid border-accent p-4 my-8 bg-foreground rounded-xl">
               <h3 className="font-bold">Repository Statistics</h3>
               <p>Total Repositories: {filteredRepositories.length}</p>
 
@@ -149,7 +149,7 @@ const GithubLicenses = () => {
             {filteredRepositories.length > 0 ? (
               <ul>
                 {filteredRepositories.map((repo) => (
-                  <li key={repo.id} className="p-2 bg-foreground border-2 border-solid border-accent rounded-xl my-2">
+                  <li key={repo.id} className="p-2 mb-2 bg-foreground border-1 border-solid border-accent rounded-xl my-2">
                     <strong>{repo.name}</strong>: {' '}
                     {repo.license ? repo.license.name : <span className="text-accent">No license specified</span>}
                     <div className="repo-details text-sm">
