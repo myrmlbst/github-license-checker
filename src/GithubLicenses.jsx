@@ -75,7 +75,7 @@ const GithubLicenses = () => {
 
   return (
     <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="font-bold text-5xl mb-4 text-center">
+      <div className="font-bold text-5xl mt-4 text-center">
         GitHub License Checker
         <p className="text-accent text-center font-medium text-xl">Avoid legal complications in the open-source world; check which of your GitHub repositories are missing licenses</p>
       </div>
@@ -102,19 +102,23 @@ const GithubLicenses = () => {
 
         {searchedUsername && !loading && !error && (
           <>
-            <h2 className="font-bold text-center">
+            <h2 className="font-bold text-center text-2xl mt-8">
               Repositories for {''}
               <span className="text-accent">
                 {searchedUsername}
               </span>
+              :
             </h2>
 
             {/* terminal displaying license stats */}
             <div className="license-stats border-2 border-solid border-accent p-4 my-8 bg-foreground rounded-xl">
               <h3 className="font-bold">Repository Statistics</h3>
               <p>Total Repositories: {filteredRepositories.length}</p>
+
+              <div className="border-1 border-accent border-solid m-2"></div>
+
               <div className="license-breakdown">
-                <h4>License Breakdown:</h4>
+                <h4 className="font-bold">License Breakdown:</h4>
                 <ul>
                   {Object.entries(getLicenseStats(repositories).licenseBreakdown).map(([license, count]) => (
                     <li key={license} className="">
