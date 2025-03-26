@@ -77,7 +77,7 @@ const GithubLicenses = () => {
     <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
       <div className="font-bold text-5xl mt-4 text-center">
         GitHub License Checker
-        <p className="text-accent text-center font-medium text-xl">Avoid legal complications in the open-source world; check which of your GitHub repositories are missing licenses</p>
+        <p className="text-highlighted text-center font-medium text-xl">Avoid legal complications in the open-source world; check which of your GitHub repositories are missing licenses</p>
       </div>
 
       <div className="github-licenses">
@@ -92,7 +92,7 @@ const GithubLicenses = () => {
           />
           <button
             type="submit"
-             className="bg-accent text-background px-4 py-2 rounded-md text-primary border-1 border-solid border-accent">
+             className="bg-green text-background px-4 py-2 rounded-md text-primary border-1 border-solid border-primary">
             Search Repositories
           </button>
         </form>
@@ -105,7 +105,7 @@ const GithubLicenses = () => {
           <>
             <h2 className="font-bold text-center text-2xl mt-8">
               Repositories for {''}
-              <span className="text-accent">
+              <span className="text-highlighted">
                 {searchedUsername}
               </span>
               :

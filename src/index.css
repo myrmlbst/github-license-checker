@@ -2,9 +2,12 @@
 
 @theme {
     --color-background: #0d1117;
-    --color-foreground: #21262d;
+    --color-foreground: #161b22;
 
     --color-primary: #ecf2f8;
+
+    --color-green: #2dba4e;
+    --color-purple: #cea5fb;
 
     --color-accent: #a2d2fb;
     --color-highlighted: #4d90fa;
