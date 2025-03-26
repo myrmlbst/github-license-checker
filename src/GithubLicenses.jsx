@@ -101,9 +101,9 @@ const GithubLicenses = () => {
           </button>
         </form>
 
-        {loading && <div>Crunching the latest data, just for you. Hang on tight...</div>}
+        {loading && <div className="text-center text-existing">Crunching the latest data, just for you. Hang on tight...</div>}
         {/* this exact phrase is actually used by GitHub, i did add "on" in the last phrase tho */}
-        {error && <div>Error: {error}</div>}
+        {error && <div className="text-center text-existing">Error: {error}</div>}
 
         {searchedUsername && !loading && !error && (
           <>
@@ -173,7 +173,7 @@ const GithubLicenses = () => {
                 ))}
               </ul>
             ) : (
-              <p>No repositories found matching the selected filters.</p>
+              <p className="text-center text-existing">No repositories found matching the selected filters.</p>
             )}
           </>
         )}
