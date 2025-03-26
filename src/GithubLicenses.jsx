@@ -73,11 +73,15 @@ const GithubLicenses = () => {
     };
   };
 
+
   return (
     <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
       <div className="font-bold text-5xl mt-4 text-center">
         GitHub License Checker
-        <p className="text-highlighted text-center font-semibold text-xl">Avoid legal complications in the open-source world; check which of your GitHub repositories are missing licenses</p>
+        <p className="text-highlighted text-center font-semibold text-xl">
+          Avoid legal complications in the open-source world;
+          check which of your GitHub repositories are missing licenses
+        </p>
       </div>
 
       <div className="github-licenses">
@@ -114,6 +118,7 @@ const GithubLicenses = () => {
             {/* terminal displaying license stats */}
             <div className="license-stats border-1 border-solid p-4 my-8 bg-foreground rounded-md">
               <h3 className="font-bold text-highlighted">Repository Statistics</h3>
+
               <p>Total Repositories: {filteredRepositories.length}</p>
 
               <div className="border-1 border-solid m-2"></div>
@@ -152,6 +157,12 @@ const GithubLicenses = () => {
                 {filteredRepositories.map((repo) => (
                   <li key={repo.id} className="p-2 mb-2 border-1 border-solid border-foreground rounded-md my-2">
                     <strong className="text-highlighted">{repo.name}</strong> {' '}
+                    {/*
+                    for the code right under this comment:
+                    fetch repository license
+                    if it exists => display license name
+                    if it does not exist => display "no license specified" message
+                    */}
                     {repo.license ? <span className="text-existing">{repo.license.name}</span> : <span className="text-warning font-bold">No license specified</span>}
                     <div className="repo-details text-sm">
                       <small>
