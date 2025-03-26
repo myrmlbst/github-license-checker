@@ -119,8 +119,12 @@ const GithubLicenses = () => {
             <div className="license-stats border-1 border-solid border-existing p-4 my-8 bg-foreground rounded-md">
               <h3 className="font-bold text-highlighted">Repository Statistics</h3>
 
-              <p>Total Repositories: {filteredRepositories.length}</p>
+              <p>
+                <span className="font-bold">Total Repositories: </span>
+                <span className="text-existing">{filteredRepositories.length}</span>
+              </p>
 
+              {/* dash between */}
               <div className="border-1 border-solid border-existing m-2"></div>
 
               <div className="license-breakdown">
@@ -128,8 +132,13 @@ const GithubLicenses = () => {
                 <ul>
                   {Object.entries(getLicenseStats(repositories).licenseBreakdown).map(([license, count]) => (
                     <li key={license} className="">
-                      {license}: {count} repositories
-                      ({((count / repositories.length) * 100).toFixed(1)}%)
+                      <span className="">
+                        {license}: {' '}
+                      </span>
+                      <span className="text-existing">
+                        {count} repositories
+                        ({((count / repositories.length) * 100).toFixed(1)}%)
+                      </span>
                     </li>
                   ))}
                 </ul>
