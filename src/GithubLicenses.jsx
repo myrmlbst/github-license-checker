@@ -78,7 +78,7 @@ const GithubLicenses = () => {
     <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
       <div className="font-bold text-5xl mt-4 text-center">
         GitHub License Checker
-        <p className="text-highlighted text-center font-semibold text-xl">
+        <p className="text-highlighted text-center font-semibold text-xl p-2">
           Avoid legal complications in the open-source world;
           check which of your GitHub repositories are missing licenses
         </p>
