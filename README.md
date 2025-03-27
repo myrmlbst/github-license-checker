@@ -16,7 +16,7 @@ This repository also serves as a study of GitHub's UI/UX design and is therefore
 
 ## Limitations
 Since this project uses GitHub's public API, it is restricted in some ways. The project permits access to:
-- **60 requests per hour:** Only 60 API calls can be made per hour.
+- **60 requests per hour:** According to the [official GitHub API Docs](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28), only 60 API calls can be made per hour for unauthenticated requests.
 - **Public repositories:** The project goes over all public repositories, including forks that have not been modified, but does not have access to private repositories.
 
 This project also uses Tailwind CSS v4, meaning that some styling components are not compatible with older versions of certain browsers (for example: only Safari 16.4+, Chrome 111+, and Firefox 128+ are fully compatible with Tailwind v4).
