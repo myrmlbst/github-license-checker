@@ -3,7 +3,7 @@
 ### Avoid legal complications in the open-source world; Check which of your GitHub repositories are missing licenses.
 
 This project consists of a simple web application that goes over the license-specific stats of a GitHub user's repositories. 
-I built it to keep track of which repositories of mine are missing licenses in order to avoid legal complications that could arise from a lack of a license in any repository.
+I built it to keep track of which projects of mine are missing licenses in order to avoid legal complications that could arise from a lack of such a document in any of my work.
 
 This repository also serves as a study of GitHub's UI/UX design and is therefore meant to be inspired by (but not a copy of) the GitHub website's front-end interface.
 
