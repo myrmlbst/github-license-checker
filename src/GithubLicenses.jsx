@@ -85,7 +85,7 @@ const GithubLicenses = () => {
       </div>
 
       <div className="github-licenses">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex items-center justify-center">
           <input
             type="text"
             value={username}
