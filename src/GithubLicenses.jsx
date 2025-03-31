@@ -172,11 +172,15 @@ const GithubLicenses = () => {
                     if it exists => display license name
                     if it does not exist => display "no license specified" message
                     */}
-                    {repo.license ? <span className="text-existing">{repo.license.name}</span> : <span className="text-warning font-bold">No license specified</span>}
+                    {repo.license ? <span className="text-existing">{repo.license.name}</span> :
+                      <span className="text-warning font-bold">No license specified</span>}
+
+                    <div className="repo-description text-sm">
+                      <small>{repo.description || 'No description'}</small>
+                    </div>
+
                     <div className="repo-details text-sm">
-                      <small>
-                        Language: {repo.language || 'Not specified'}
-                      </small>
+                      <small>Language: {repo.language || 'Not specified'}</small>
                     </div>
                   </li>
                 ))}
