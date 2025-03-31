@@ -180,7 +180,7 @@ const GithubLicenses = () => {
                     </div>
 
                     <div className="repo-details text-sm">
-                      <small>Language: {repo.language || 'Not specified'}</small>
+                      <small><span className="font-bold">Language:</span> {repo.language || 'Not specified'}</small>
                     </div>
                   </li>
                 ))}
