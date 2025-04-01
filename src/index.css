@@ -3,13 +3,12 @@
 @theme {
     --color-background: #0d1117;
     --color-foreground: #161b22;
-
+    --color-border: #3c4552;
+    --color-existing: #89929b;
+    --color-accent: #c6cdd5;
     --color-primary: #ecf2f8;
 
     --color-green: #2dba4e;
-
-    --color-accent: #c6cdd5;
     --color-highlighted: #4d90fa;
-    --color-existing: #89929b;
     --color-warning: #fa7970;
 }
