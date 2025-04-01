@@ -5,7 +5,9 @@
 This project consists of a simple web application that goes over the license-specific stats of a GitHub user's repositories. 
 I built it to keep track of which projects of mine are missing licenses in order to avoid legal complications that could arise from a lack of such a document in any of my work.
 
-This repository also serves as a study of GitHub's UI/UX design and is therefore meant to be inspired by (but not a copy of) the GitHub website's front-end interface.
+The project uses GitHub's Rest API to fetch information, and the repos are displayed in alphabetical order and may be filtered by language of choice.
+
+This repository also serves as a study of GitHub's UI/UX design and is therefore meant to be heavily inspired by (but not a direct copy of) the GitHub website's front-end interface.
 
 ## Tech Stack
 - JavaScript
