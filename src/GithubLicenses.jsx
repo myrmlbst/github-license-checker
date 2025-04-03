@@ -188,7 +188,7 @@ const GithubLicenses = () => {
                         href={repo.html_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent text-sm border-1 border-solid border-border rounded-md bg-background hover:bg-foreground px-4 py-1"
+                        className="text-accent text-sm border-1 border-solid border-border rounded-sm bg-background hover:bg-foreground px-4 py-1"
                       >
                         View Repository
                       </a>
