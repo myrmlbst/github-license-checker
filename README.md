@@ -39,7 +39,6 @@ First off, fork or clone this repo and install the dependencies:
 Then finally, run the project:
 
 4. ```npm run dev```
-
 5. Copy and paste the URL provided in your terminal into your browser to view the project
 
 ### React + Vite
