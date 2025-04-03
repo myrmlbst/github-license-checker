@@ -164,7 +164,7 @@ const GithubLicenses = () => {
             {filteredRepositories.length > 0 ? (
               <ul>
                 {filteredRepositories.map((repo) => (
-                  <li key={repo.id} className="p-2 mb-2 border-1 border-solid border-border rounded-md my-2">
+                  <li key={repo.id} className="p-2 mb-2 pl-4 pr-8 border-1 border-solid border-border rounded-md my-2">
                     <strong className="text-highlighted">{repo.name}</strong> {' '}
                     {/*
                     for the code right under this comment:
@@ -175,7 +175,7 @@ const GithubLicenses = () => {
                     {repo.license ? <span className="text-existing">{repo.license.name}</span> :
                       <span className="text-warning font-bold">No license specified</span>}
 
-                    <div className="repo-description text-sm">
+                    <div className="repo-description">
                       <small>{repo.description || 'No description'}</small>
                     </div>
 
@@ -183,7 +183,7 @@ const GithubLicenses = () => {
                       <small><span className="font-bold">Language:</span> {repo.language || 'Not specified'}</small>
                     </div>
 
-                    <button className="mt-2 mb-2">
+                    <button className="mt-2 mb-1">
                       <a
                         href={repo.html_url}
                         target="_blank"
