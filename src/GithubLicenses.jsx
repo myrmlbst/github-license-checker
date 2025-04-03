@@ -182,6 +182,17 @@ const GithubLicenses = () => {
                     <div className="repo-details text-sm">
                       <small><span className="font-bold">Language:</span> {repo.language || 'Not specified'}</small>
                     </div>
+
+                    <button className="mt-2 mb-2">
+                      <a
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent text-sm border-1 border-solid border-border rounded-md bg-background hover:bg-foreground px-4 py-1"
+                      >
+                        View Repository
+                      </a>
+                    </button>
                   </li>
                 ))}
               </ul>
