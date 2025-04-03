@@ -28,12 +28,17 @@ This repository falls under the MIT License.
 Feel free to fork this repository to build on top of it or use it for your own purposes.
 For more information, see the ```LICENSE``` file.
 
-## Installation
-You may clone this repository and run the following commands in your terminal
-to install the necessary dependencies and start the development server:
+## Installations
+You may clone this repository and run the provided commands in your terminal
+to install the necessary dependencies and start the development server. 
+First off, fork or clone this repo and install the dependencies:
 1. ```git clone https://github.com/myrmlbst/github-license-checker.git```
 2. ```cd github-license-checker```
 3. ```npm install -D vite```
+
+Then finally, run the project:
+4. ```npm run dev```
+5. Copy and paste the URL provided in your terminal into your browser to view the project
 
 ### React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
