@@ -121,7 +121,7 @@ const GithubLicenses = () => {
 
               <p>
                 <span className="font-bold">Total Repositories: </span>
-                <span className="text-existing">{filteredRepositories.length}</span>
+                <span className="text-existing">{repositories.length}</span>
               </p>
 
               {/* dash between */}
