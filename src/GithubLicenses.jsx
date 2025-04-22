@@ -75,7 +75,7 @@ const GithubLicenses = () => {
 
 
   return (
-    <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="bg-background text-primary flex flex-col items-center justify-center min-h-screen p-4 pt-[10vh]">
       <div className="font-bold text-5xl mt-4 text-center">
         GitHub License Checker
         <p className="text-highlighted text-center font-semibold text-xl p-2">
@@ -85,7 +85,7 @@ const GithubLicenses = () => {
       </div>
 
       <div className="github-licenses">
-        <form onSubmit={handleSubmit} className="flex items-center justify-center">
+        <form onSubmit={handleSubmit} className="flex items-center justify-center pb-[5vh]">
           <input
             type="text"
             value={username}
