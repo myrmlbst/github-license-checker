@@ -21,7 +21,7 @@ const GithubLicenses = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://api.github.com/users/${searchedUsername}/repos`
+          `https://api.github.com/users/${searchedUsername}/repos?per_page=100&page=1`
         );
 
         if (!response.ok) {
